@@ -12,3 +12,18 @@
 - 만들어진 Vector는 단순 3차원이 아니라 100 차원의 좌표계 표시를 3차원으로 단순화 한 것이기 때문에 절대적인 거리가 작을 때 실제 그래프에 가깝게 표시되지 않습니다.
 
 - 우측의 Search를 통해 특정 단어를 검색하여 유사한 단어를 찾을 수 있습니다.
+
+# File
+- poet_vectorize.ipynb : 백석과 윤동주의 시에서 명사만 추출하여 vector화 한 후 파일로 저장하는 코드
+
+- poet_korean : 벡터화 완료된 결과가 저장되어있는 파일
+
+- poet_korean_metadata.tsv : Embedding Projector로 시각화를 위한 명사 메타데이터 저장 파일
+
+- poet_korean_tensor.tsv : Embedding Projector 시각화를 위한 명사의 Vector 값 저장 파일
+
+- poet_config.json : Embedding Projector에서 위의 두 파일을 읽어오기 위한 설정 파일
+
+# 활용 명령어
+- 벡터화 완료된 결과 파일에서 메타데이터와 벡터값 파일을 생성하기 위해 아래의 명령어를 실행
+><pre><code>python -m gensim.scripts.word2vec2tensor -input "poet_korean" -output "poet_korean"</code></pre>
